@@ -7,6 +7,8 @@ import originality from '@/pages/originality/index'
 import mine from '@/pages/mine/index'
 import concern from '@/pages/mine/concern'
 import addressList from '@/pages/mine/addressList'
+import addressEdit from '@/pages/mine/addressEdit'
+import changeName from '@/pages/mine/changeName'
 
 Vue.use(Router)
 
@@ -48,6 +50,14 @@ export default new Router({
             path: '/addressList',
             name: 'addressList',
             component: addressList
-        },
+        }, {
+            path: '/addressEdit',
+            name: 'addressEdit',
+            component: addressEdit
+        }, {
+            path: '/changeName',
+            name: 'changeName',
+            component: changeName
+        }
     ]
 })

@@ -1,11 +1,8 @@
 <template>
-    <div>
-        <div v-if="itemId == '1'">
-            关注
+    <yd-layout :title="itemId == '1'? '关注' : '粉丝'" link="/mine">
 
-        </div>
-        <div v-else>粉丝</div>
-    </div>
+
+    </yd-layout>
 </template>
 
 <script>
@@ -13,7 +10,8 @@
         name: 'concern',
         data () {
             return {
-                itemId: '1'
+                itemId: '1',
+
             }
         },
         created () {
@@ -24,5 +22,11 @@
 </script>
 
 <style scoped>
-
+    .topBar{
+        position:fixed;
+        top:0;
+        left: 0;
+        right:0;
+        z-index: 1000;
+    }
 </style>

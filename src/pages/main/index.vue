@@ -3,24 +3,34 @@
         <transition name="slide-right">
             <router-view class="myRouter"></router-view>
         </transition>
-        <tab-bar></tab-bar>
+        <yd-tabbar class="tabBar" slot="tabbar">
+            <yd-tabbar-item title="首页" link="home">
+                <yd-icon :name=" currentTab == '/home' ? 'home' : 'home-outline'" slot="icon" size="0.54rem"
+                         color="#FF685D"></yd-icon>
+            </yd-tabbar-item>
+            <yd-tabbar-item title="定制" link="customMade">
+                <yd-icon :name="currentTab == '/customMade' ? 'like': 'like-outline'" slot="icon" size="0.54rem"
+                         color="#FF685D"></yd-icon>
+            </yd-tabbar-item>
+            <yd-tabbar-item title="创意" link="originality">
+                <yd-icon :name=" currentTab == '/originality' ? 'shopcart' : 'shopcart-outline'" slot="icon" size="0.54rem"
+                         color="#FF685D"></yd-icon>
+            </yd-tabbar-item>
+            <yd-tabbar-item title="我的" link="mine">
+                <yd-icon :name=" currentTab == '/mine' ? 'ucenter' : 'ucenter-outline'" slot="icon" size="0.54rem"
+                         color="#FF685D"></yd-icon>
+            </yd-tabbar-item>
+        </yd-tabbar>
     </yd-layout>
 </template>
 
 <script>
-    import tabBar from '@/components/tabBar'
 
     export default {
-        name: 'index',
-        components: {
-            tabBar
-        }
+        name: 'index'
     }
 </script>
 
 <style scoped>
-    .myRouter {
-        overflow: auto;
-        padding-bottom: 1.08rem;
-    }
+
 </style>

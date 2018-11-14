@@ -1,5 +1,5 @@
 <template>
-    <yd-tabbar class="tabBar">
+    <yd-tabbar class="tabBar" slot="tabbar">
         <yd-tabbar-item title="首页" link="home">
             <yd-icon :name=" currentTab == '/home' ? 'home' : 'home-outline'" slot="icon" size="0.54rem"
                      color="#FF685D"></yd-icon>

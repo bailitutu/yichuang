@@ -18,10 +18,10 @@
         </div>
 
         <yd-grids-group :rows="3" class="mt-35">
-            <yd-grids-item>
+            <yd-grids-item link="changeName" >
                 <div slot="else" style="text-align: center;">
                     <img src="../../assets/待发货.png" class="center_cell" alt="">
-                    <p>待发货</p>
+                    <p>修改昵称</p>
                 </div>
             </yd-grids-item>
             <yd-grids-item>
