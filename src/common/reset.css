@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.yd-scrollview:after{
+    height:0;
+}
+.yd-cell{
+    z-index: auto;
+}
+.hasNav{
+    padding-top:1rem;
+}
