@@ -11,3 +11,7 @@
 .hasNav{
     padding-top:1rem;
 }
+.yd-cell-item {
+    background: #fff;
+    border-bottom: 1px solid #f4f4f4;
+}

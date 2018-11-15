@@ -27,7 +27,20 @@
 <script>
 
     export default {
-        name: 'index'
+        name: 'index',
+        data () {
+            return {
+                currentTab: '/home'
+            }
+        },
+        created () {
+            this.currentTab = this.$route.path
+        },
+        watch: {
+            '$route' (to) {
+                this.currentTab = to.path
+            }
+        }
     }
 </script>
 

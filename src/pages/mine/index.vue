@@ -24,10 +24,10 @@
                     <p>修改昵称</p>
                 </div>
             </yd-grids-item>
-            <yd-grids-item>
+            <yd-grids-item link="message">
                 <div slot="else" style="text-align: center;">
                     <img src="../../assets/待发货.png" class="center_cell" alt="">
-                    <p>待发货</p>
+                    <p>我的消息</p>
                 </div>
             </yd-grids-item>
             <yd-grids-item>
@@ -42,16 +42,16 @@
                     <p>待发货</p>
                 </div>
             </yd-grids-item>
-            <yd-grids-item>
+            <yd-grids-item link="myWallet">
                 <div slot="else" style="text-align: center;">
                     <img src="../../assets/待发货.png" class="center_cell" alt="">
-                    <p>待发货</p>
+                    <p>钱包</p>
                 </div>
             </yd-grids-item>
-            <yd-grids-item>
+            <yd-grids-item link="shopIn">
                 <div slot="else" style="text-align: center;">
                     <img src="../../assets/待发货.png" class="center_cell" alt="">
-                    <p>待发货</p>
+                    <p>店铺入驻</p>
                 </div>
             </yd-grids-item>
         </yd-grids-group>

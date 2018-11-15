@@ -9,6 +9,10 @@ import concern from '@/pages/mine/concern'
 import addressList from '@/pages/mine/addressList'
 import addressEdit from '@/pages/mine/addressEdit'
 import changeName from '@/pages/mine/changeName'
+import message from '@/pages/mine/message'
+import shopIn from '@/pages/mine/shopIn'
+import myWallet from '@/pages/mine/myWallet'
+import transactionDetails from '@/pages/mine/transactionDetails'
 
 Vue.use(Router)
 
@@ -58,6 +62,22 @@ export default new Router({
             path: '/changeName',
             name: 'changeName',
             component: changeName
+        }, {
+            path: '/message',
+            name: 'message',
+            component: message
+        }, {
+            path: '/shopIn',
+            name: 'shopIn',
+            component: shopIn
+        }, {
+            path: '/myWallet',
+            name: 'myWallet',
+            component: myWallet
+        }, {
+            path: '/transDetail',
+            name: 'transDetail',
+            component: transactionDetails
         }
     ]
 })
