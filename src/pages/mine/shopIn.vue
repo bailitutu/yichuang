@@ -1,6 +1,6 @@
 <template>
     <yd-layout title="店铺入驻" link="/mine">
-        <yd-cell-group class="mt-10">
+        <yd-cell-group class="mt-10" v-if="!isCheck">
             <yd-cell-item>
                 <span slot="left">手机号：</span>
                 <input slot="right" type="number" placeholder="请输入手机号">
@@ -25,7 +25,17 @@
                 <input slot="right" type="number" placeholder="请输入微信号">
             </yd-cell-item>
 
-        </yd-cell-group>
+        </yd-cell-group >
+        <div class="btn_box" v-if="!isCheck">
+            <yd-button size="large" bgcolor="#333" color="#FFF">申请入驻</yd-button>
+        </div>
+
+        <div class="checking_item" v-if="isCheck">
+            <img src="../../assets/shenhezhong.png" alt="">
+            <p>审核中</p>
+        </div>
+
+
     </yd-layout>
 </template>
 
@@ -34,7 +44,8 @@
         name: 'address-edit',
         data () {
             return {
-                start1: false
+                start1: false,
+                isCheck: true
             }
         },
         created () {
@@ -67,5 +78,27 @@
 
     .yd-cell-item {
         background: #fff;
+    }
+
+    .btn_box {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .checking_item {
+        text-align: center;
+    }
+
+    .checking_item img {
+        width: 160px;
+        height: auto;
+        margin: 90px auto 0;
+        display: block;
+    }
+
+    .checking_item p {
+        font-size: 14px;
+        color: #B0B0B0;
+        margin-top: 34px;
     }
 </style>

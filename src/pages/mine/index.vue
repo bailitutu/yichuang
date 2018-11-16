@@ -1,7 +1,7 @@
 <template>
     <yd-layout>
         <div class="user_header">
-            <img src="../../assets/头像.png" alt="" class="header_img" link="">
+            <img src="../../assets/head.png" alt="" class="header_img"  @click="goSetting()">
             <p class="user_name">小仙女</p>
             <yd-grids-group :rows="2" class="fans_item">
                 <yd-grids-item class="fans_cell" link="concern/1">
@@ -18,7 +18,7 @@
         </div>
 
         <yd-grids-group :rows="3" class="mt-35">
-            <yd-grids-item link="changeName" >
+            <yd-grids-item link="changeName">
                 <div slot="else" style="text-align: center;">
                     <img src="../../assets/待发货.png" class="center_cell" alt="">
                     <p>修改昵称</p>
@@ -57,33 +57,33 @@
         </yd-grids-group>
 
         <yd-cell-group class="mt-15">
-            <yd-cell-item arrow href="order" type="link">
+            <yd-cell-item arrow href="/orderList" type="link">
                 <span slot="left">我的订单</span>
                 <span slot="right"></span>
             </yd-cell-item>
             <yd-grids-group :rows="4">
-                <yd-grids-item>
+                <yd-grids-item @click.native="goOrder(1)">
                     <div slot="else" style="text-align: center;">
                         <img src="../../assets/待发货.png" class="order_state" alt="">
                         <p>待发货</p>
                     </div>
                 </yd-grids-item>
-                <yd-grids-item>
+                <yd-grids-item @click.native="goOrder(2)">
                     <div slot="else" style="text-align: center;">
                         <img src="../../assets/待发货.png" class="order_state" alt="">
-                        <p>待发货</p>
+                        <p>待收货</p>
                     </div>
                 </yd-grids-item>
-                <yd-grids-item>
+                <yd-grids-item @click.native="goOrder(3)">
                     <div slot="else" style="text-align: center;">
                         <img src="../../assets/待发货.png" class="order_state" alt="">
-                        <p>待发货</p>
+                        <p>已完成</p>
                     </div>
                 </yd-grids-item>
-                <yd-grids-item>
+                <yd-grids-item @click.native="goOrder(4)">
                     <div slot="else" style="text-align: center;">
                         <img src="../../assets/待发货.png" class="order_state" alt="">
-                        <p>待发货</p>
+                        <p>所有订单</p>
                     </div>
                 </yd-grids-item>
             </yd-grids-group>
@@ -109,7 +109,16 @@
 
 <script>
     export default {
-        name: 'index'
+        name: 'index',
+        methods: {
+            goOrder (index) {
+                this.$router.push({path: 'orderList', query: {index: index}})
+            },
+            goSetting () {
+                this.$router.push({path: 'setting'})
+            }
+
+        }
     }
 </script>
 
@@ -165,8 +174,9 @@
         width: 20px;
         height: 20px;
     }
-    .center_cell{
-        width:30px;
+
+    .center_cell {
+        width: 30px;
         height: 30px;
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>about us</div>
+    <yd-layout title="关于我们" link="/mine" ></yd-layout>
 </template>
 
 <script>

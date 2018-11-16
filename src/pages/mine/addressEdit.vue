@@ -30,9 +30,11 @@
         </yd-cell-group>
         <yd-cityselect v-model="show1" :callback="result1" :items="district"></yd-cityselect>
         <div class="prl-10" >
-            <yd-button size="large" type="primary" style="background: #fff;color: #282828;"> 删除地址</yd-button>
+            <yd-button size="large" type="primary"  bgcolor="#fff" color="#282828"> 保存</yd-button>
         </div>
-
+        <div class="prl-10" >
+            <yd-button size="large" type="danger" class="mt-10" color="#fff"> 删除地址</yd-button>
+        </div>
     </yd-layout>
 </template>
 
@@ -60,6 +62,9 @@
 <style>
     .mt-10 {
         margin-top: 10px;
+    }
+    .prl-10{
+        padding: 0 12px;
     }
     .set_default{
         padding: 12px;

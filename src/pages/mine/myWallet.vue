@@ -5,7 +5,15 @@
                 <span > 交易记录</span>
             </div>
             <p>我的余额</p>
-            <h3>980.00</h3>
+            <!--<h3>980.00</h3>-->
+            <yd-countup class="count_num"
+                    endnum="1200"
+                    duration="1"
+                    decimals="2"
+                    separator=","
+                    prefix=""
+                    suffix=""
+            ></yd-countup>
             <yd-button size="small" class="cash_btn" >提现</yd-button>
         </div>
     </yd-layout>
@@ -56,9 +64,10 @@
         margin-top: 20px;
     }
 
-    .wallet_item h3 {
+    .wallet_item .count_num {
         font-size: 24px;
         margin-top: 26px;
+        display: block;
     }
 
     .wallet_item .cash_btn {

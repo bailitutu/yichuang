@@ -1,10 +1,10 @@
 <template>
-    <yd-layout title="联系我们" link="/mine" ></yd-layout>
+
 </template>
 
 <script>
     export default {
-        name: 'connect-us'
+        name: 'bind-phone'
     }
 </script>
 

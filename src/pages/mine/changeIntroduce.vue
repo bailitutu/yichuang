@@ -1,6 +1,6 @@
 <template>
     <yd-layout>
-        <yd-navbar title="昵称修改">
+        <yd-navbar title="店铺介绍">
             <router-link to="/mine" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>

@@ -13,6 +13,10 @@ import message from '@/pages/mine/message'
 import shopIn from '@/pages/mine/shopIn'
 import myWallet from '@/pages/mine/myWallet'
 import transactionDetails from '@/pages/mine/transactionDetails'
+import orderList from '@/pages/mine/orderList'
+import aboutUs from '@/pages/mine/aboutUs'
+import connectUs from '@/pages/mine/connectUs'
+import setting from '@/pages/mine/setting'
 
 Vue.use(Router)
 
@@ -78,6 +82,22 @@ export default new Router({
             path: '/transDetail',
             name: 'transDetail',
             component: transactionDetails
+        }, {
+            path: '/orderList',
+            name: 'orderList',
+            component: orderList
+        }, {
+            path: '/aboutUs',
+            name: 'aboutUs',
+            component: aboutUs
+        }, {
+            path: '/connectUs',
+            name: 'connectUs',
+            component: connectUs
+        }, {
+            path: '/setting',
+            name: 'setting',
+            component: setting
         }
     ]
 })

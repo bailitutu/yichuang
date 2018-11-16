@@ -1,7 +1,7 @@
 <template>
     <yd-layout title="地址管理" link="/mine">
         <yd-cell-group class="mlr-10" style="background: #f4f4f4;">
-            <yd-cell-item arrow class="list_item" :href="{ path:'/addressEdit',query:{ id:'1'}}" type="link"
+            <yd-cell-item arrow class="list_item" :href="{ path:'/addressEdit',query:{ type:'2'}}" type="link"
                           v-for="(data,index) in 4" :key="index">
                 <div slot="left">
                     <p> 小明 <span>18232321123</span> <span>默认</span></p>
@@ -12,7 +12,7 @@
         </yd-cell-group>
         <div class="plr-10"
              style="width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
-            <yd-button size="large" type="primary" style="background: #fff;color: #282828;">
+            <yd-button size="large" type="primary" style="background: #fff;color: #282828;" @click.native="addAddress">
                 <!--<yd-icon name="home" size=".6rem" color=""></yd-icon>-->
                 新增地址
             </yd-button>
@@ -22,7 +22,12 @@
 
 <script>
     export default {
-        name: 'address-list'
+        name: 'address-list',
+        methods:{
+            addAddress(){
+                this.$router.push({path:'addressEdit',query:{ type:'1'}})
+            }
+        }
     }
 </script>
 
