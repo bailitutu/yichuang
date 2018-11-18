@@ -18,39 +18,39 @@
         </div>
 
         <yd-grids-group :rows="3" class="mt-35">
-            <yd-grids-item link="changeName">
+            <yd-grids-item link="/shopCar">
                 <div slot="else" style="text-align: center;">
-                    <img src="../../assets/待发货.png" class="center_cell" alt="">
-                    <p>修改昵称</p>
+                    <img src="../../assets/myShopCar.png" class="center_cell" alt="">
+                    <p>购物车</p>
                 </div>
             </yd-grids-item>
-            <yd-grids-item link="message">
+            <yd-grids-item link="/message">
                 <div slot="else" style="text-align: center;">
-                    <img src="../../assets/待发货.png" class="center_cell" alt="">
+                    <img src="../../assets/myMessage.png" class="center_cell" alt="">
                     <p>我的消息</p>
                 </div>
             </yd-grids-item>
-            <yd-grids-item>
+            <yd-grids-item link="/mineMade">
                 <div slot="else" style="text-align: center;">
-                    <img src="../../assets/待发货.png" class="center_cell" alt="">
-                    <p>待发货</p>
+                    <img src="../../assets/myMade.png" class="center_cell" alt="">
+                    <p>我的定制</p>
                 </div>
             </yd-grids-item>
             <yd-grids-item>
                 <div slot="else" style="text-align: center;">
-                    <img src="../../assets/待发货.png" class="center_cell" alt="">
-                    <p>待发货</p>
+                    <img src="../../assets/myMatch.png" class="center_cell" alt="">
+                    <p>赛事</p>
                 </div>
             </yd-grids-item>
-            <yd-grids-item link="myWallet">
+            <yd-grids-item link="/myWallet">
                 <div slot="else" style="text-align: center;">
-                    <img src="../../assets/待发货.png" class="center_cell" alt="">
+                    <img src="../../assets/myWallet.png" class="center_cell" alt="">
                     <p>钱包</p>
                 </div>
             </yd-grids-item>
-            <yd-grids-item link="shopIn">
+            <yd-grids-item link="/shopIn">
                 <div slot="else" style="text-align: center;">
-                    <img src="../../assets/待发货.png" class="center_cell" alt="">
+                    <img src="../../assets/shopIn.png" class="center_cell" alt="">
                     <p>店铺入驻</p>
                 </div>
             </yd-grids-item>
@@ -64,25 +64,25 @@
             <yd-grids-group :rows="4">
                 <yd-grids-item @click.native="goOrder(1)">
                     <div slot="else" style="text-align: center;">
-                        <img src="../../assets/待发货.png" class="order_state" alt="">
+                        <img src="../../assets/waitSend.png" class="order_state" alt="">
                         <p>待发货</p>
                     </div>
                 </yd-grids-item>
                 <yd-grids-item @click.native="goOrder(2)">
                     <div slot="else" style="text-align: center;">
-                        <img src="../../assets/待发货.png" class="order_state" alt="">
+                        <img src="../../assets/waitGet.png" class="order_state" alt="">
                         <p>待收货</p>
                     </div>
                 </yd-grids-item>
                 <yd-grids-item @click.native="goOrder(3)">
                     <div slot="else" style="text-align: center;">
-                        <img src="../../assets/待发货.png" class="order_state" alt="">
+                        <img src="../../assets/waitFeed.png" class="order_state" alt="">
                         <p>已完成</p>
                     </div>
                 </yd-grids-item>
                 <yd-grids-item @click.native="goOrder(4)">
                     <div slot="else" style="text-align: center;">
-                        <img src="../../assets/待发货.png" class="order_state" alt="">
+                        <img src="../../assets/backManage.png" class="order_state" alt="">
                         <p>所有订单</p>
                     </div>
                 </yd-grids-item>

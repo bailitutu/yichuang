@@ -17,6 +17,8 @@ import orderList from '@/pages/mine/orderList'
 import aboutUs from '@/pages/mine/aboutUs'
 import connectUs from '@/pages/mine/connectUs'
 import setting from '@/pages/mine/setting'
+import withdrawCash from '@/pages/mine/withdrawCash'
+import mineMade from '@/pages/mine/mineMade'
 
 Vue.use(Router)
 
@@ -98,6 +100,14 @@ export default new Router({
             path: '/setting',
             name: 'setting',
             component: setting
+        }, {
+            path: '/withdrawCash',
+            name: 'withdrawCash',
+            component: withdrawCash
+        }, {
+            path: '/mineMade',
+            name: 'mineMade',
+            component: mineMade
         }
     ]
 })

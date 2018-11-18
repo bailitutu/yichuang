@@ -25,9 +25,9 @@
                 <input slot="right" type="number" placeholder="请输入微信号">
             </yd-cell-item>
 
-        </yd-cell-group >
-        <div class="btn_box" v-if="!isCheck">
-            <yd-button size="large" bgcolor="#333" color="#FFF">申请入驻</yd-button>
+        </yd-cell-group>
+        <div class="plr-12" v-if="!isCheck">
+            <yd-button size="large" bgcolor="#333" color="#FFF" @click.native="applyIn">申请入驻</yd-button>
         </div>
 
         <div class="checking_item" v-if="isCheck">
@@ -45,7 +45,7 @@
         data () {
             return {
                 start1: false,
-                isCheck: true
+                isCheck: false
             }
         },
         created () {
@@ -66,6 +66,9 @@
                     })
 
                 }, 1000)
+            },
+            applyIn () {
+                this.isCheck = true
             }
         }
     }
@@ -78,11 +81,6 @@
 
     .yd-cell-item {
         background: #fff;
-    }
-
-    .btn_box {
-        width: 100%;
-        padding: 12px;
     }
 
     .checking_item {

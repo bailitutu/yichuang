@@ -65,7 +65,6 @@
         width: 22px;
         height: 22px;
     }
-
     .shopBgItem {
         padding-top: 10px;
         padding-bottom: 10px;

@@ -1,5 +1,7 @@
 <template>
-    <yd-layout title="联系我们" link="/mine" ></yd-layout>
+    <yd-layout title="联系我们" link="/mine" >
+        记得联系我们哦
+    </yd-layout>
 </template>
 
 <script>
