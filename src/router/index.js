@@ -19,6 +19,11 @@ import connectUs from '@/pages/mine/connectUs'
 import setting from '@/pages/mine/setting'
 import withdrawCash from '@/pages/mine/withdrawCash'
 import mineMade from '@/pages/mine/mineMade'
+import changePassword from '@/pages/mine/changePassword'
+import changePhone from '@/pages/mine/changePhone'
+import bindPhone from '@/pages/mine/bindPhone'
+import changeIntroduce from '@/pages/mine/changeIntroduce'
+import shopCar from '@/pages/mine/shopCar'
 
 Vue.use(Router)
 
@@ -108,6 +113,26 @@ export default new Router({
             path: '/mineMade',
             name: 'mineMade',
             component: mineMade
+        }, {
+            path: '/changePassword',
+            name: 'changePassword',
+            component: changePassword
+        }, {
+            path: '/changePhone',
+            name: 'changePhone',
+            component: changePhone
+        }, {
+            path: '/bindPhone',
+            name: 'bindPhone',
+            component: bindPhone
+        }, {
+            path: '/changeIntroduce',
+            name: 'changeIntroduce',
+            component: changeIntroduce
+        }, {
+            path: '/shopCar',
+            name: 'shopCar',
+            component: shopCar
         }
     ]
 })

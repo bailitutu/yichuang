@@ -1,7 +1,7 @@
 <template>
     <yd-layout title="设置" link="/mine">
         <yd-cell-group class="mt-15">
-            <yd-cell-item href="addressList" type="link">
+            <yd-cell-item>
                 <span slot="left">头像</span>
                 <span slot="right">
                     <img src="../../assets/head.png" class="userHead" alt="">

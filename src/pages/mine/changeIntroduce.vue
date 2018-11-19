@@ -1,7 +1,7 @@
 <template>
     <yd-layout>
         <yd-navbar title="店铺介绍">
-            <router-link to="/mine" slot="left">
+            <router-link to="/setting" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
             <router-link slot="right" to="" @click.native="saveFn()">

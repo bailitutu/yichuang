@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="地址管理" link="/mine">
+    <yd-layout title="地址管理" link="/setting">
         <yd-cell-group class="mlr-10" style="background: #f4f4f4;">
             <yd-cell-item arrow class="list_item" :href="{ path:'/addressEdit',query:{ type:'2'}}" type="link"
                           v-for="(data,index) in 4" :key="index">

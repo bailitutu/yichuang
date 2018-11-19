@@ -16,10 +16,10 @@
     border-bottom: 1px solid #f4f4f4;
 }
 .mt-10{
-    margin-top: 10px;
+    margin-top: 0.2rem;
 }
 .plr-12{
-    padding:0 12px;
+    padding:0 0.24rem;
 }
 .c-33{
     color: #333333;
@@ -35,4 +35,38 @@
 }
 .bg-28{
     background: #282828;
+}
+.yd-btn-block{
+    -webkit-border-radius: 0.08rem;
+    -moz-border-radius: 0.08rem;
+    border-radius: 0.08rem;
+}
+.one_row{
+    width:100%;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+input::-webkit-input-placeholder{
+    color: #939393;
+    font-size:0.28rem;
+}    /* 使用webkit内核的浏览器 */
+input:-moz-placeholder{
+    color: #939393;
+    font-size:0.28rem;
+}                  /* Firefox版本4-18 */
+input::-moz-placeholder{
+    color: #939393;
+    font-size:0.28rem;
+}                  /* Firefox版本19+ */
+input:-ms-input-placeholder{
+    color: #939393;
+    font-size:0.28rem;
+}           /* IE浏览器 */
+.yc_btn{
+    width:1.4rem;
+    height:0.7rem;
+    -webkit-border-radius: 0.08rem;
+    -moz-border-radius: 0.08rem;
+    border-radius: 0.08rem;
 }

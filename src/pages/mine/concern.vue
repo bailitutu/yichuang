@@ -10,12 +10,12 @@
             <li>
                 <img src="../../assets/head.png" alt="" class="concern_img">
                 <p>飞翔的祥</p>
-                <yd-button size="small" type="primary" class="concern_btn">关注</yd-button>
+                <yd-button size="small" type="primary" class="concern_btn" bgcolor="#282828" color="#fff">关注</yd-button>
             </li>
             <li>
                 <img src="../../assets/head.png" alt="" class="concern_img">
                 <p>飞翔的祥</p>
-                <yd-button size="small" type="primary" class="concern_btn isActive">已关注</yd-button>
+                <yd-button size="small" type="primary" class="concern_btn" bgcolor="#B0B0B0" color="#fff">已关注</yd-button>
             </li>
         </ul>
     </yd-layout>
@@ -82,12 +82,5 @@
     .concern_btn {
         min-width: 50px;
         height: 24px;
-        background: #282828;
-        color: #fff;
-        align-content: flex-end;
-    }
-
-    .concern_btn.isActive {
-        background: #B0B0B0;
     }
 </style>

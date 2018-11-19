@@ -91,10 +91,6 @@
 
 
         <yd-cell-group class="mt-15">
-            <yd-cell-item arrow href="addressList" type="link">
-                <span slot="left">地址管理</span>
-                <span slot="right"></span>
-            </yd-cell-item>
             <yd-cell-item arrow href="aboutUs" type="link">
                 <span slot="left">关于我们</span>
                 <span slot="right"></span>
