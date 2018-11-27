@@ -7,15 +7,14 @@
             </li>
         </ul>
         <ul class="concern_list" v-else>
-            <li>
-                <img src="../../assets/head.png" alt="" class="concern_img">
-                <p>飞翔的祥</p>
-                <yd-button size="small" type="primary" class="concern_btn" bgcolor="#282828" color="#fff">关注</yd-button>
-            </li>
-            <li>
-                <img src="../../assets/head.png" alt="" class="concern_img">
-                <p>飞翔的祥</p>
-                <yd-button size="small" type="primary" class="concern_btn" bgcolor="#B0B0B0" color="#fff">已关注</yd-button>
+            <li v-for="( item,index ) in sortData" :key="index">
+                <img :src="item.headImg" alt="" class="concern_img">
+                <p>{{item.name}}</p>
+                <yd-button size="small" type="primary" class="concern_btn"
+                           :bgcolor="!item.hasConcern ? '#282828' : '#B0B0B0' " color="#fff"
+                           @click.native="concernFn(index,item.hasConcern)"> {{ item.hasConcern ? '已关注' : '关注'}}
+                </yd-button>
+
             </li>
         </ul>
     </yd-layout>
@@ -26,12 +25,51 @@
         name: 'concern',
         data () {
             return {
-                itemId: '1'
+                itemId: '1',
+                list: [{
+                    headImg: require('../../assets/head.png'),
+                    name: '飞翔的羊',
+                    hasConcern: false
+                }, {
+                    headImg: require('../../assets/head.png'),
+                    name: '飞翔的祥',
+                    hasConcern: true
+                }, {
+                    headImg: require('../../assets/head.png'),
+                    name: '飞翔的祥',
+                    hasConcern: false
+                }]
             }
         },
         created () {
             let params = this.$route.params
             this.itemId = params.item
+        },
+        computed: {
+            sortData () {
+                let newData = this.list.sort(function (val1,val2) {
+                    if(!val1.hasConcern){
+                        return -1;
+                    }else{
+                        return 1
+                    }
+                })
+                return newData
+            },
+        },
+        methods: {
+            concernFn (index, isConcern) {
+                this.list[index].hasConcern = !isConcern
+                if (isConcern) {
+                    this.$dialog.toast({
+                        mes: '取消关注成功'
+                    })
+                } else {
+                    this.$dialog.toast({
+                        mes: '关注成功！'
+                    })
+                }
+            }
         }
     }
 </script>

@@ -7,14 +7,11 @@
             </yd-cell-item>
             <yd-cell-item>
                 <input type="text" slot="right" placeholder="请输入验证码">
-                <!-- ↓↓关键代码是这里↓↓ -->
                 <yd-sendcode slot="right"
                              v-model="start1"
                              @click.native="sendCode1"
                              type="warning"
                 ></yd-sendcode>
-                <!-- ↑↑关键代码是这里↑↑ -->
-
             </yd-cell-item>
             <yd-cell-item>
                 <span slot="left">姓名：</span>

@@ -9,10 +9,15 @@ import 'vue-ydui/dist/ydui.rem.css'
 // import '@/assets/font-icon/iconfont.css'
 import '@/common/reset.css'
 import Api from '@/common/api.js'
+import myFilter from './filter'
 
 Vue.prototype.$http = Api
 Vue.use(YDUI)
 Vue.config.productionTip = false
+
+for (let key in myFilter) {
+    Vue.filter(key, myFilter[key])
+}
 
 /* eslint-disable no-new */
 new Vue({

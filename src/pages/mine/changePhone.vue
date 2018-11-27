@@ -4,7 +4,7 @@
             <img src="../../assets/change_icon.png" alt="">
         </div>
         <div class="phone_tip">
-            <p>您当前已绑定手机 <span>{{phoneDeal}}</span></p>
+            <p>您当前已绑定手机 <span>{{bindPhone | hidePhone}}</span></p>
         </div>
         <yd-cell-group class="change_section">
             <yd-cell-item class="change_item">
@@ -38,16 +38,10 @@
                 bindPhone: '18223423412'
             }
         },
-        computed: {
-            phoneDeal () {
-                return this.bindPhone.substr(0, 3) + '****' + this.bindPhone.substr(7)
-            }
-        },
         methods: {
             sendCode1 () {
                 this.$dialog.loading.open('发送中...')
                 setTimeout(() => {
-
                     this.start1 = true
                     this.$dialog.loading.close()
 

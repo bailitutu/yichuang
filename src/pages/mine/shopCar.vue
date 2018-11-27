@@ -15,20 +15,23 @@
                     </div>
                 </div>
                 <div class="car_right">
-                    <yd-spinner max="75" unit="1" width="1.6rem" height="0.45rem" v-model="item.num"></yd-spinner>
+                    <yd-spinner max="100" unit="1" width="1.6rem" height="0.45rem" v-model="item.num"></yd-spinner>
                 </div>
             </li>
         </ul>
         <div class="car_footer">
             <div class="car_tool">
-                <yd-checkbox v-model="selectAll" size="20" color="#606060" style="font-size:0.28rem;" shape="circle">
+                <yd-checkbox v-model="selectAll" size="20" @change.native="selAll" color="#606060"
+                             style="font-size:0.28rem;" shape="circle">
                     全选
                 </yd-checkbox>
-                <yd-button type="primary" bgcolor="#333" color="#fff" class="yc_btn">删除</yd-button>
+                <yd-button type="primary" bgcolor="#333" color="#fff" class="yc_btn" @click.native="delHandle">删除
+                </yd-button>
             </div>
             <div class="car_end">
                 <p>价格: <span>￥{{ allMoney }}</span></p>
-                <yd-button type="primary" bgcolor="#333" color="#fff" class="yc_btn">结算</yd-button>
+                <yd-button type="primary" bgcolor="#333" color="#fff" class="yc_btn" @click.native="goPay">结算
+                </yd-button>
             </div>
         </div>
     </yd-layout>
@@ -46,7 +49,7 @@
                         selected: true,
                         goodImg: require('../../assets/goods.png'),
                         name: '女士连衣裙女士连衣裙女士连衣裙女士连衣裙',
-                        price: '88.50',
+                        price: '188.50',
                         num: 1
                     },
                     {
@@ -55,33 +58,116 @@
                         name: '女士连衣裙女士连衣裙女士连衣裙女士连衣裙',
                         price: '88.50',
                         num: 1
+                    }, {
+                        selected: true,
+                        goodImg: require('../../assets/goods.png'),
+                        name: '女士连衣裙女士连衣裙女士连衣裙女士连衣裙',
+                        price: '288.50',
+                        num: 1
+                    },
+                    {
+                        selected: false,
+                        goodImg: require('../../assets/goods.png'),
+                        name: '女士连衣裙女士连衣裙女士连衣裙女士连衣裙',
+                        price: '68.50',
+                        num: 1
                     }
                 ]
             }
         },
         computed: {
-            allMoney: function () {
-                return '1000.00'
+
+            allMoney () {
+                let allPrice = 0
+                this.list.map((item) => {
+                    if (item.selected) {
+                        allPrice += Math.floor(parseFloat(item.price * 100 * item.num)) / 100
+                    }
+                })
+                return allPrice
+            },
+            hasSelect () {
+                return this.list.filter(item => item.selected)
             }
         },
         watch: {
             list: {
-                handler(){
-
-                }
+                handler (val) {
+                    let isAll = true
+                    if (!val.length) {
+                        isAll = false
+                    } else {
+                        val.map((item) => {
+                            if (!item.selected) {
+                                isAll = false
+                            }
+                        })
+                    }
+                    this.selectAll = isAll
+                },
+                deep: true
             }
-
         },
         methods: {
+            // 选择某一项;
             selectItem (i) {
-                console.log(i)
                 this.list[i].selected = !this.list[i].selected
-                console.log(this.list)
+            },
+            // 全选/反选
+            selAll () {
+                this.list.forEach((item) => {
+                    item.selected = !this.selectAll
+                })
+            },
+            // 删除
+            delHandle () {
+                if (this.hasSelect.length > 0) {
+                    this.$dialog.confirm({
+                        title: '',
+                        mes: '确认移除？',
+                        opts: () => {
+                            // 发送删除请求
+                            this.list = this.list.filter(item => !item.selected)
+                        }
+                    })
+                } else {
+                    this.$dialog.toast({
+                        mes: '请选择要移除的商品'
+                    })
+                }
+            },
+            // 前往支付
+            goPay () {
+                if (this.hasSelect.length > 0) {
+                    this.$dialog.confirm({
+                        title: '',
+                        mes: '确认结算？',
+                        opts: () => {
+                            // 跳转结算页面
+                            this.list = this.list.filter(item => !item.selected)
+                            this.$dialog.toast({
+                                mes: '结算成功'
+                            })
+                        }
+                    })
+                } else if(!this.list.length){
+                    this.$dialog.toast({
+                        mes: '还没有商品哦，快去逛逛吧！'
+                    })
+                }else {
+                    this.$dialog.toast({
+                        mes: '请先选择商品'
+                    })
+                }
             }
         }
     }
 </script>
-
+<style>
+    .yd-confirm-hd,.yd-confirm-bd{
+        text-align: center;
+    }
+</style>
 <style scoped>
     .car_list {
         padding: 0 0.24rem;
